@@ -1,0 +1,165 @@
+import './style.css';
+
+const app = document.querySelector<HTMLDivElement>('#app');
+
+if (app) {
+  app.innerHTML = `
+    <main class="container">
+      <section class="content">
+        <h1 class="title shake-text">Alvaro | Web Developer</h1>
+        <p class="intro shake-text">
+          Oi, me chamo Alvaro Paiva, desenvolvedor com foco em backend e automação, do Rio de Janeiro - Brasil.
+        </p>
+
+        <div class="groups">
+          <div class="group">
+            <h2 class="group-title shake-text">Você me encontra em:</h2>
+            <ul class="links">
+              <li>
+                <a class="link" href="https://github.com/1alvaropaiva" target="_blank" rel="noopener noreferrer">
+                  <span class="label shake-text">github</span>
+                  <span class="icon" aria-hidden="true">${githubIcon()}</span>
+                </a>
+              </li>
+              <li>
+                <a class="link" href="https://instagram.com/1alvaropaiva" target="_blank" rel="noopener noreferrer">
+                  <span class="label shake-text">instagram</span>
+                  <span class="icon" aria-hidden="true">${instagramIcon()}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="group">
+            <h2 class="group-title shake-text">Alguns dos meus projetos:</h2>
+            <ul class="links">
+              <li>
+                <a class="link" href="https://anajulia-niver.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <span class="label shake-text">Ana Júlia - 1 aninho</span>
+                  <span class="icon" aria-hidden="true">${cakeIcon()}</span>
+                </a>
+              </li>
+              <li>
+                <a class="link" href="https://github.com/1alvaropaiva/portaldoaluno" target="_blank" rel="noopener noreferrer">
+                  <span class="label shake-text">Portal do Aluno</span>
+                  <span class="icon" aria-hidden="true">${certificateIcon()}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <h2 class="group-title shake-text">Para trabalho:</h2>
+            <ul class="links">
+              <li>
+                <a class="link" href="https://www.linkedin.com/in/1alvaropaiva" target="_blank" rel="noopener noreferrer">
+                  <span class="label shake-text">linkedin</span>
+                  <span class="icon" aria-hidden="true">${linkedinIcon()}</span>
+                </a>
+              </li>
+              <li>
+                <a class="link" href="/CV_AlvaroPaiva.pdf" download>
+                  <span class="label shake-text">resume</span>
+                  <span class="icon" aria-hidden="true">${resumeIcon()}</span>
+                </a>
+              </li>
+              <li>
+                <span class="link disabled" aria-disabled="true">
+                  <span class="label">freelance | projetos</span>
+                  <span class="icon" aria-hidden="true">${freelanceIcon()}</span>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  `;
+}
+
+function githubIcon() {
+  return `
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" role="img" aria-label="GitHub">
+      <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.02c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.75.08-.73.08-.73 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.84 1.32 3.53 1.01.11-.79.42-1.32.77-1.63-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.25-3.24-.13-.31-.54-1.56.12-3.26 0 0 1.01-.32 3.31 1.24a11.5 11.5 0 0 1 6.02 0c2.3-1.56 3.31-1.24 3.31-1.24.66 1.7.25 2.95.12 3.26.78.85 1.25 1.93 1.25 3.24 0 4.62-2.8 5.64-5.47 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 12 .5z"/>
+    </svg>
+  `;
+}
+
+function instagramIcon() {
+  return `
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" role="img" aria-label="Instagram">
+      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zM18 6.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
+    </svg>
+  `;
+}
+
+function cakeIcon() {
+    return `
+    <svg viewBox="0 0 512 512" width="20" height="20" fill="currentColor" role="img" aria-label="Cake">
+      <path d="M352 96c0-35.3-28.7-64-64-64-11 0-20 9-20 20s9 20 20 20v24h-24V72c0-35.3-28.7-64-64-64-11 0-20 9-20 20s9 20 20 20v24h-24V72C176 36.7 147.3 8 112 8 101 8 92 17 92 28s9 20 20 20v24H96c-8.8 0-16 7.2-16 16v72h352v-72c0-8.8-7.2-16-16-16h-16V48c11 0 20-9 20-20s-9-20-20-20c-35.3 0-64 28.7-64 64v24h-24V72z"/>
+      <path d="M64 240c-26.5 0-48 21.5-48 48v176c0 8.8 7.2 16 16 16h448c8.8 0 16-7.2 16-16V288c0-26.5-21.5-48-48-48H64zm80 64l112-64 112 64 112-64v48l-112 64-112-64-112 64L32 288v-48l112 64z"/>
+      <circle cx="112" cy="352" r="12"/>
+      <circle cx="176" cy="336" r="12"/>
+      <circle cx="240" cy="368" r="12"/>
+      <circle cx="304" cy="336" r="12"/>
+      <circle cx="368" cy="352" r="12"/>
+      <circle cx="432" cy="336" r="12"/>
+    </svg>
+  `;
+}
+
+function certificateIcon() {
+    return `
+    <svg viewBox="0 0 512 512" width="20" height="20" fill="currentColor" role="img" aria-label="Certificate">
+      <path d="M256 8c-66.3 0-120 53.7-120 120s53.7 120 120 120 120-53.7 120-120S322.3 8 256 8zm0 208c-48.6 0-88-39.4-88-88s39.4-88 88-88 88 39.4 88 88-39.4 88-88 88z"/>
+      <path d="M352.4 270.2l-55.8 16.5-40.6-30.3c-3.9-2.9-9.1-2.9-13 0l-40.6 30.3-55.8-16.5c-5-1.5-10.3.9-12.4 5.7l-24 52.7c-2.1 4.8-.7 10.5 3.5 13.7l45.3 35.2-2.1 57.4c-.2 5.3 3 10.1 8 11.8l56.5 19.6c4.9 1.7 10.3-.1 13.3-4.4L256 416l25.3 38.8c3 4.3 8.4 6.1 13.3 4.4l56.5 19.6c5 1.7 10.2-.5 12.4-5.4l24-52.7c2.1-4.8.7-10.5-3.5-13.7l-45.3-35.2 2.1-57.4c.2-5.3-3-10.1-8-11.8z"/>
+    </svg>
+  `;
+}
+
+function linkedinIcon() {
+  return `
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" role="img" aria-label="LinkedIn">
+      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.65 4.78 6.1V21h-4v-4.98c0-1.19-.02-2.72-1.66-2.72-1.66 0-1.92 1.3-1.92 2.64V21H9z"/>
+    </svg>
+  `;
+}
+
+function resumeIcon() {
+  return `
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" role="img" aria-label="Resume">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm0 0v6h6"/>
+      <path d="M8 13h8M8 17h8M8 9h2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    </svg>
+  `;
+}
+
+function freelanceIcon() {
+  return `
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" role="img" aria-label="Freelance">
+      <path d="M3 6h18v2H3zM5 10h14v10H5z"/>
+    </svg>
+  `;
+}
+
+function splitLetters(selector: string) {
+    document.querySelectorAll(selector).forEach(el => {
+        const text = (el.textContent || "").replace(/^\s+/, ""); // remove espaços iniciais
+        if (!text) return;
+
+        const tokens = text.match(/\S+|\s+/g) || [];
+
+        const html = tokens.map(token => {
+            if (/^\s+$/.test(token)) {
+                return " ";
+            } else {
+                const letters = token.split("").map(ch => `<span>${ch}</span>`).join("");
+                return `<span class="word">${letters}</span>`;
+            }
+        }).join("");
+
+        el.innerHTML = html;
+    });
+}
+
+splitLetters(".shake-text");

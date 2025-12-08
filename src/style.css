@@ -1,0 +1,132 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body, #app {
+    height: 100%;
+}
+
+body {
+    color: #fff;
+    background-color: #1b1b1b;
+    font-size: 15px;
+    font-family: "Menlo", monospace;
+    line-height: 1.725;
+    text-rendering: geometricPrecision;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+}
+
+main.container {
+    margin: auto;
+    width: 50%;
+    max-width: 40rem;
+    padding: 10px;
+}
+
+.content {
+    width: 100%;
+    flex: 1 1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 4rem auto;
+}
+
+.title {
+    letter-spacing: 0.01em;
+    font-size: 2em;
+    font-weight: 700;
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.group-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.groups {
+    margin-top: 2rem;
+}
+
+.links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links li {
+    margin: 0.3rem 0;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0.9;
+}
+
+.link:hover {
+    opacity: 1;
+}
+
+.link.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.icon svg {
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+}
+
+.intro {
+    margin-bottom: 2rem;
+    max-width: 40rem;
+}
+
+.shake-text {
+    word-break: normal;
+    white-space: normal;
+}
+
+.shake-text .word {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 0.15em;
+}
+
+.shake-text .word span {
+    display: inline-block;
+    transition: transform 0.15s;
+    cursor: default;
+    will-change: transform;
+}
+
+.shake-text .word span:hover {
+    animation: shake-strong 0.35s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes shake-strong {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    20% { transform: translate(-1px, 1px) rotate(-3deg); }
+    40% { transform: translate(1px, -1px) rotate(3deg); }
+    60% { transform: translate(-1px, -1px) rotate(-1deg); }
+    80% { transform: translate(1px, 1px) rotate(2deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+.shake-text .word + .word { margin-left: 0; }
