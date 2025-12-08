@@ -6,6 +6,7 @@
 
 html, body, #app {
     height: 100%;
+    cursor: default;
 }
 
 body {
@@ -62,10 +63,12 @@ main.container {
     list-style: none;
     padding: 0;
     margin: 0;
+    cursor: default;
 }
 
 .links li {
     margin: 0.3rem 0;
+    cursor: default;
 }
 
 .link {
@@ -75,21 +78,24 @@ main.container {
     align-items: center;
     gap: 0.4rem;
     opacity: 0.9;
+    cursor: default;
 }
 
 .link:hover {
     opacity: 1;
+    cursor: default;
 }
 
 .link.disabled {
     opacity: 0.5;
-    cursor: not-allowed;
+    cursor: default;
 }
 
 .icon svg {
     width: 1rem;
     height: 1rem;
     display: inline-block;
+    cursor: default;
 }
 
 .intro {
