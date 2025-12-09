@@ -12,7 +12,7 @@ html, body, #app {
 body {
     color: #fff;
     background-color: #1b1b1b;
-    font-size: 15px;
+    font-size: clamp(14px, 1.6vw, 16px);
     font-family: "Menlo", monospace;
     line-height: 1.725;
     text-rendering: geometricPrecision;
@@ -40,7 +40,7 @@ main.container {
 
 .title {
     letter-spacing: 0.01em;
-    font-size: 2em;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
     font-weight: 700;
     color: white;
     margin-top: 3rem;
@@ -49,7 +49,7 @@ main.container {
 }
 
 .group-title {
-    font-size: 1.2rem;
+    font-size: clamp(1.05rem, 2.3vw, 1.3rem);
     font-weight: 600;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
@@ -79,6 +79,7 @@ main.container {
     gap: 0.4rem;
     opacity: 0.9;
     cursor: default;
+    padding: 0.15rem 0;
 }
 
 .link:hover {
@@ -136,3 +137,45 @@ main.container {
 }
 
 .shake-text .word + .word { margin-left: 0; }
+
+@media (max-width: 1024px) {
+    main.container {
+        width: 72%;
+    }
+}
+
+@media (max-width: 768px) {
+    main.container {
+        width: 92%;
+        padding: 6px;
+    }
+
+    .content {
+        margin: 2rem auto;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .links li {
+        margin: 0.5rem 0;
+    }
+
+    .icon svg {
+        width: 1.1rem;
+        height: 1.1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: clamp(1.4rem, 6vw, 1.8rem);
+    }
+
+    .group-title {
+        font-size: clamp(1rem, 4.5vw, 1.15rem);
+    }
+
+    .content {
+        margin: 1.5rem auto;
+    }
+}
