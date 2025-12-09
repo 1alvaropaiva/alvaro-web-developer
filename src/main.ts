@@ -40,9 +40,9 @@ if (app) {
                 </a>
               </li>
               <li>
-                <a class="link" href="https://github.com/1alvaropaiva/portaldoaluno" target="_blank" rel="noopener noreferrer">
-                  <span class="label shake-text">Portal do Aluno</span>
-                  <span class="icon" aria-hidden="true">${certificateIcon()}</span>
+                <a class="link" href="https://lessonplans.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <span class="label shake-text">Gerador de Planos de Aula (Gemini 2.5 Flash)</span>
+                  <span class="icon" aria-hidden="true">${lessonplansIcon()}</span>
                 </a>
               </li>
             </ul>
@@ -108,14 +108,18 @@ function cakeIcon() {
   `;
 }
 
-function certificateIcon() {
+function lessonplansIcon() {
     return `
-    <svg viewBox="0 0 512 512" width="20" height="20" fill="currentColor" role="img" aria-label="Certificate">
-      <path d="M256 8c-66.3 0-120 53.7-120 120s53.7 120 120 120 120-53.7 120-120S322.3 8 256 8zm0 208c-48.6 0-88-39.4-88-88s39.4-88 88-88 88 39.4 88 88-39.4 88-88 88z"/>
-      <path d="M352.4 270.2l-55.8 16.5-40.6-30.3c-3.9-2.9-9.1-2.9-13 0l-40.6 30.3-55.8-16.5c-5-1.5-10.3.9-12.4 5.7l-24 52.7c-2.1 4.8-.7 10.5 3.5 13.7l45.3 35.2-2.1 57.4c-.2 5.3 3 10.1 8 11.8l56.5 19.6c4.9 1.7 10.3-.1 13.3-4.4L256 416l25.3 38.8c3 4.3 8.4 6.1 13.3 4.4l56.5 19.6c5 1.7 10.2-.5 12.4-5.4l24-52.7c2.1-4.8.7-10.5-3.5-13.7l-45.3-35.2 2.1-57.4c.2-5.3-3-10.1-8-11.8z"/>
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" role="img" aria-label="Lesson plans" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 2h10l5 5v13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z" stroke-linejoin="round" stroke-width="1.5" />
+      <polyline points="13 2 13 7 18 7" stroke-linejoin="round" stroke-width="1.5" />
+      <line x1="6" y1="9"  x2="16" y2="9"  stroke-linecap="round" stroke-width="1.2" />
+      <line x1="6" y1="12" x2="16" y2="12" stroke-linecap="round" stroke-width="1.2" />
+      <line x1="6" y1="15" x2="14" y2="15" stroke-linecap="round" stroke-width="1.2" />
     </svg>
   `;
 }
+
 
 function linkedinIcon() {
   return `
