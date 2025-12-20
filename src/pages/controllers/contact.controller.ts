@@ -1,4 +1,5 @@
 import { submitContact } from "../../services/contact.service";
+import { splitLetters } from "../../scripts/splitLetters";
 
 export function bindContactForm(root: HTMLElement) {
   const form = root.querySelector('#contactForm') as HTMLFormElement;
@@ -19,21 +20,25 @@ export function bindContactForm(root: HTMLElement) {
       message: formData.get('message') as string,
     };
 
-    const originalText = button.textContent;
+    const originalText = 'enviar';
     button.disabled = true;
-    button.textContent = 'Enviando...';
+    button.textContent = 'enviando...';
+    splitLetters('.contact-submit');
 
     try {
       await submitContact(data);
-      button.textContent = 'Enviado com sucesso';
+      button.textContent = 'enviado com sucesso';
+      splitLetters('.contact-submit');
       form.reset();
     } catch {
-      button.textContent = 'Erro ao enviar';
+      button.textContent = 'erro ao enviar';
+      splitLetters('.contact-submit');
     } finally {
       setTimeout(() => {
         button.textContent = originalText;
         button.disabled = false;
-      }, 2000);
+        splitLetters('.contact-submit');
+      }, 3000);
     }
   });
 }
