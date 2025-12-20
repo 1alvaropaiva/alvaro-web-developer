@@ -5,25 +5,37 @@ Repositório do meu portfólio pessoal, desenvolvido com Vite + TypeScript e est
 ### Stack
 - Vite 7
 - TypeScript 5
-- HTML
-- CSS (mobile‑first)
+- Firebase (Firestore para contatos)
+- CSS3 (Mobile‑first)
 
 ### Estrutura
 ```
 .
-├─ public/
-│  ├─ favicon.png
-│  ├─ CV_AlvaroPaiva.pdf
+├─ public/           # Arquivos estáticos (PDFs, Favicon)
 ├─ src/
-│  ├─ icons.ts          # SVGs como funções utilitárias
-│  ├─ home.ts           # Função que rende o HTML da Home
-│  ├─ main.ts           # Bootstrap da aplicação (Vite)
-│  ├─ splitLetters.ts   # Utilitário: envolve cada letra em spans p/ animação
-│  └─ style.css         # CSS mobile‑first e animações
-├─ index.html           # Metatags, SEO/OG, root #app e script Vite
+│  ├─ app/           # Núcleo da aplicação (Router, Routes)
+│  ├─ css/           # Estilos modulares
+│  ├─ db/            # Configuração e integração com Firebase
+│  ├─ pages/          # Componentes de página (HTML/JS)
+│  │  └─ controllers/ # Lógica de interação das páginas
+│  ├─ scripts/       # Utilitários (Animações, Ícones)
+│  ├─ services/      # Camada de serviços (Regras de negócio)
+│  └─ main.ts        # Ponto de entrada (Bootstrap)
+├─ index.html
 ├─ package.json
-├─ tsconfig.json
 └─ README.md
+```
+
+### Configuração
+Para o funcionamento do formulário de contato, é necessário criar um arquivo `.env` na raiz do projeto com as seguintes chaves do Firebase:
+
+```env
+VITE_FIREBASE_API_KEY=sua_key
+VITE_FIREBASE_AUTH_DOMAIN=seu_dominio
+VITE_FIREBASE_PROJECT_ID=seu_id
+VITE_FIREBASE_STORAGE_BUCKET=seu_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=seu_id
+VITE_FIREBASE_APP_ID=seu_id
 ```
 
 ### Como Rodar Localmente
@@ -57,6 +69,9 @@ Uso:
 - Links externos abrem em nova aba com `rel="noopener noreferrer"`.
 
 ### Notas de Arquitetura
-- O HTML é renderizado por `renderHome()` e injetado em `#app` pelo `main.ts`, mantendo responsabilidades separadas (HTML/CSS/TS).
-- O import de `style.css` é feito diretamente no `main.ts` para que o bundler do Vite inclua o CSS no build final.
+- **Roteamento Customizado**: A aplicação utiliza um sistema de rotas próprio (`src/app/router.ts`) que gerencia a troca de conteúdo no elemento `#app` sem recarregar a página.
+- **Páginas Dinâmicas**: Cada página é uma função que retorna HTML, localizada em `src/pages/`.
+- **Separação de Preocupações**: A lógica de interação com o DOM é isolada em controladores (`src/pages/controllers/`), enquanto as regras de negócio e persistência ficam em `services/` e `db/`.
+- **Animações**: Utiliza um sistema de "shake" e animação de letras via `src/scripts/splitLetters.ts`, permitindo efeitos dinâmicos no texto.
+- **Estilização**: O import de arquivos CSS é feito de forma modular e incluído no build final pelo Vite.
 

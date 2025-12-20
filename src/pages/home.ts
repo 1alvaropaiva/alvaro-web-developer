@@ -6,7 +6,7 @@ import {
   linkedinIcon,
   resumeIcon,
   freelanceIcon,
-} from './icons';
+} from '../scripts/icons';
 
 export function renderHome(): string {
   return `
@@ -15,7 +15,7 @@ export function renderHome(): string {
         <h1 class="title shake-text">Alvaro | Web Developer</h1>
 
         <p class="intro shake-text">
-          Oi, me chamo Alvaro Paiva, desenvolvedor com foco em backend e automação, do Rio de Janeiro - Brasil.
+          Oi, me chamo Alvaro Paiva, desenvolvedor web com foco em backend e automação, do Rio de Janeiro - Brasil.
         </p>
 
         <div class="groups">
@@ -72,10 +72,10 @@ export function renderHome(): string {
                 </a>
               </li>
               <li>
-                <span class="link disabled">
-                  <span class="label">freelance | projetos</span>
+                <a class="link" href="/contact" data-route="contact">
+                  <span class="label shake-text">freelance | projetos</span>
                   <span class="icon">${freelanceIcon()}</span>
-                </span>
+                </a>
               </li>
             </ul>
           </div>

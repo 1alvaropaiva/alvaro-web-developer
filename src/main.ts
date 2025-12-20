@@ -1,12 +1,5 @@
-import './style.css';
-import { renderHome } from './home';
-import { splitLetters } from './splitLetters';
+import './css/home.css';
+import './css/contact.css';
+import { initRouter } from './app/router';
 
-const app = document.querySelector<HTMLDivElement>('#app');
-
-if (!app) {
-  throw new Error('#app não encontrado');
-}
-
-app.innerHTML = renderHome();
-splitLetters('.shake-text');
+initRouter();
